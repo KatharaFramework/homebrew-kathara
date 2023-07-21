@@ -20,7 +20,7 @@ cask "kathara" do
 
   livecheck do
     url :homepage
-    regex(/^(\d+)\.(\d+)\.(\d+)$/i)
+    regex(/^((\d+)\.(\d+)\.(\d+))$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
         next if release["draft"] || release["prerelease"]
