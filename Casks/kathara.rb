@@ -2,7 +2,7 @@ cask "kathara" do
   version "3.6.2"
   name "Kathara"
   desc "Lightweight network emulation tool."
-  homepage "https://www.kathara.org/"
+  homepage "https://github.com/KatharaFramework/Kathara"
 
   if Hardware::CPU.arm?
     url "https://github.com/KatharaFramework/Kathara/releases/download/#{version}/Kathara-macos-installer-arm64-#{version}.pkg"
@@ -19,7 +19,7 @@ cask "kathara" do
   end
 
   livecheck do
-    url :stable
+    url :homepage
     regex(/^(\d+)\.(\d+)\.(\d+)$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
