@@ -1,5 +1,9 @@
+require 'open-uri'
+require 'json'
+
 cask "kathara" do
-  version "3.6.3"
+  latest_release = JSON.parse(open('https://api.github.com/repos/KatharaFramework/Kathara/releases/latest').read)
+  version latest_release["tag_name"]
   name "Kathara"
   desc "Lightweight network emulation tool."
   homepage "https://github.com/KatharaFramework/Kathara"
