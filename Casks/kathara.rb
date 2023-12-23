@@ -1,8 +1,8 @@
-require 'open-uri'
+require 'net/http'
 require 'json'
 
 cask "kathara" do
-  latest_release = JSON.parse(open('https://api.github.com/repos/KatharaFramework/Kathara/releases/latest').read)
+  latest_release = JSON.parse(Net::HTTP.get(URI('https://api.github.com/repos/KatharaFramework/Kathara/releases/latest')))
   version latest_release["tag_name"]
   name "Kathara"
   desc "Lightweight network emulation tool."
