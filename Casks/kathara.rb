@@ -1,5 +1,5 @@
 cask "kathara" do
-  version "3.8.0"
+  version "3.8.1"
   name "Kathara"
   desc "Lightweight network emulation tool."
   homepage "https://github.com/KatharaFramework/Kathara"
